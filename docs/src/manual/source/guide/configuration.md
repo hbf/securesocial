@@ -12,17 +12,19 @@ Create a `securesocial.conf` file within your app's conf directory and include i
 
 If you plan to use the `UsernamePasswordProvider` you need to configure your mail service. SecureSocial uses the [mailer plugin](https://github.com/typesafehub/play-plugins/tree/master/mailer) from Typesafe.
 
-These settings go in the `smtp` section of the `securesocial.conf` file:
+These settings go in the `smtp` section of the `securesocial.conf` file. Here is an example for the case when you have a Gmail (or Google Apps) account and use the Gmail SMTP server:
 
 	:::bash
 	smtp {
 		host=smtp.gmail.com
-		#port=25
+		port=465
 		ssl=true
-		user="your_user"
+		user="your_user@gmail.com"
 		password=your_password
 		from="your_from_address"
 	}
+
+In case you use a Google Apps account, enter `your_user@your_domain` instead of `your_user@gmail.com`.
 
 ## Global Settings
 
